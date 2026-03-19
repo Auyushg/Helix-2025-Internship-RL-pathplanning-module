@@ -17,7 +17,7 @@ Corridor Navigation Specialized handling for narrow corridors including wall cen
 
 Isaac Lab Integration Built on NVIDIA Isaac Lab with RSL-RL PPO training framework
 
-**Keywords:** extension, template, isaaclab
+**Keywords:** reinforcement-learning, isaaclab, unitree-go2, quadruped, navigation, obstacle-avoidance, lidar, warehouse-robotics, ppo, isaac-sim
 
 ## Installation
 
