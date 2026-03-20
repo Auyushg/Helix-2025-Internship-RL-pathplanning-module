@@ -31,10 +31,10 @@ path_planning_threshold = 500
 obstacle_phase = True
 
 WAYPOINTS = [
-    (0.79, 10.26),
+    (0.69, 11.26),
     (0.79, 15.27),
     (1.47, 24.61),
-    (-0.36, 28.25),
+    (-0.36, 27.25),
     (-2.37, 23.12),
     (-1.54, 16.10),   # enter from right
     (-2.24, 17.50),   # curve up-left
@@ -63,7 +63,7 @@ WAYPOINTS = [
 ]
 
 WAYPOINT_RADII = [
-    1.0,  # wp 0
+    0.5,  # wp 0
     1.0,  # wp 1
     1.0,  # wp 2
     1.0,  # wp 3

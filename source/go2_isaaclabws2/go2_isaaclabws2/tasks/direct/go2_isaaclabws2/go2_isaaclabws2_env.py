@@ -1108,7 +1108,7 @@ class Go2Isaaclabws2Env(DirectRLEnv):
         base_height = self.robot.data.root_link_pos_w[:, 2]
         too_low = base_height < 0.16
 
-        collided = (self.lidar_front < 0.35) | (self.lidar_left < 0.25) | (self.lidar_right < 0.25)
+        collided = (self.lidar_front < 0.35) | (self.lidar_left < 0.15) | (self.lidar_right < 0.15)
 
 
         terminated = tipped_over | too_low #| collided
