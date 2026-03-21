@@ -75,7 +75,7 @@ YOLO-based object detector(used in this case for findign caution-slip signs) and
             ```
     - Install Ros2 Humble:
 
-            ```bash
+            ```
             sudo apt install ros-humble-desktop
             sudo apt install ros-humble-cv-bridge
             sudo apt install ros-humble-tf2-ros
@@ -84,7 +84,7 @@ YOLO-based object detector(used in this case for findign caution-slip signs) and
             ```
     - Run AI Simulation:
 
-            ```bash
+            ```
             python scripts/rsl_rl/play.py --task=Template-Go2-Isaaclabws2-Direct-v0 --num_envs=1 --enable_cameras
             ```
 
