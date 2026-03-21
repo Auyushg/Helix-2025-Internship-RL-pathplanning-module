@@ -1,8 +1,10 @@
-# Isaac Lab Unitree Go2 RL-based Pathplanning
+# Isaac Lab Unitree Go2 RL-based Pathplanning and YOLO-based Object Detection and Location
 
 ## Overview
 
-A reinforcement learning framework for training a Unitree Go2 quadruped robot to autonomously navigate warehouse environments using lidar-based obstacle avoidance and waypoint navigation. The robot learns to walk, avoid obstacles, and follow sequential waypoints through complex indoor environments including narrow corridors and sharp turns.
+A reinforcement learning framework for training a Unitree Go2 quadruped robot to autonomously navigate warehouse environments using lidar-based obstacle avoidance and waypoint navigation. The robot learns to walk, avoid obstacles, and follow sequential waypoints through complex indoor environments including narrow corridors and sharp turns. Includes a ROS2 bridge for real-time sensor publishing and integration with external perception modules such as YOLO-based object detection.
+
+Software Used: ROS2 Humble, YOLOv8, Ubuntu 22.04, Isaaclab 2.1, IsaacSim 4.5
 
 **Key Features:**
 
@@ -17,7 +19,11 @@ Corridor Navigation Specialized handling for narrow corridors including wall cen
 
 Isaac Lab Integration Built on NVIDIA Isaac Lab with RSL-RL PPO training framework
 
-**Keywords:** reinforcement-learning, isaaclab, unitree-go2, quadruped, navigation, obstacle-avoidance, lidar, warehouse-robotics, ppo, isaac-sim
+ROS2 Bridge Real-time publishing of robot odometry, pose, RGB camera, and depth camera data to ROS2 topics for integration with external modules
+
+YOLO-based object detector(used in this case for findign caution-slip signs) and depth camera-based gloal frame location calculator
+
+**Keywords:** reinforcement-learning, isaaclab, unitree-go2, quadruped, navigation, obstacle-avoidance, lidar, warehouse-robotics, ppo, isaac-sim, yolo, rviz2, rgb-based object detection
 
 ## Installation
 
@@ -66,6 +72,20 @@ Isaac Lab Integration Built on NVIDIA Isaac Lab with RSL-RL PPO training framewo
             ```bash
             # use 'FULL_PATH_TO_isaaclab.sh|bat -p' instead of 'python' if Isaac Lab is not installed in Python venv or conda
             python scripts/random_agent.py --task=<TASK_NAME>
+            ```
+    - Install Ros2 Humble:
+
+            ```
+            sudo apt install ros-humble-desktop
+            sudo apt install ros-humble-cv-bridge
+            sudo apt install ros-humble-tf2-ros
+            sudo apt install ros-humble-sensor-msgs
+            pip install rclpy
+            ```
+    - Run AI Simulation:
+
+            ```
+            python scripts/rsl_rl/play.py --task=Template-Go2-Isaaclabws2-Direct-v0 --num_envs=1 --enable_cameras
             ```
 
 ### Set up IDE (Optional)
